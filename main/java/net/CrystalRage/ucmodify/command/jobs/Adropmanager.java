@@ -21,48 +21,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @SideOnly(Side.CLIENT)
 @Mod.EventBusSubscriber
 public class Adropmanager {
-    public static boolean dropmoney = false;
-    public static final Timer timer = new Timer();
-    public static final AtomicBoolean started = new AtomicBoolean();
+    public boolean dropmoney = false;
 
-    public static void adropschwarzpulver() {
-        EntityPlayerSP p = Minecraft.getMinecraft().player;
-        if (started.get()) return;
-
-        Scoreboard scoreboard = p.getWorldScoreboard();
-        Score score = scoreboard.getScores().stream()
-                .filter(scorePredicate -> {
-                    String playerName = scorePredicate.getPlayerName();
-
-                    return playerName.contains("Schwarzpulver");
-                })
-                .findFirst()
-                .orElse(null);
-
-        if (score == null) {
-            p.sendMessage(ColorMessage.getMSG("§7Du machst derzeit keinen Transport Job."));
-            return;
-        }
-
-        int amount = score.getScorePoints();
-
-        started.set(true);
-        timer.scheduleAtFixedRate(new TimerTask() {
-            private int i;
-
-            @Override
-            public void run() {
-                p.sendChatMessage("/droptransport");
-                if (i++ > amount) {
-                    started.set(false);
-                    cancel();
-                }
-            }
-        }, 0L, TimeUnit.SECONDS.toMillis((long) 10.1));
-        return;
-    }
-
-    public static void adropmoney() {
+    public void adropmoney() {
         EntityPlayerSP p = Minecraft.getMinecraft().player;
 
         dropmoney = true;

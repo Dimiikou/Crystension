@@ -29,7 +29,8 @@ public class AdropmoneyCMD extends CommandBase implements IClientCommand {
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (!(sender instanceof EntityPlayer)) return;
         if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
-            Adropmanager.adropmoney();
+            Adropmanager adropmanager = new Adropmanager();
+            adropmanager.adropmoney();
             return;
         }
     }
