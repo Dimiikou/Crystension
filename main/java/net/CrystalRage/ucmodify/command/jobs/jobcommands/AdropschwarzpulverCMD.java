@@ -9,7 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.client.IClientCommand;
 
-public class AdropmoneyCMD extends CommandBase implements IClientCommand {
+public class AdropschwarzpulverCMD extends CommandBase implements IClientCommand {
     @Override
     public boolean allowUsageWithoutPrefix(ICommandSender sender, String message) {
         return false;
@@ -17,7 +17,7 @@ public class AdropmoneyCMD extends CommandBase implements IClientCommand {
 
     @Override
     public String getName() {
-        return "adropmoney";
+        return "adropschwarzpulver";
     }
 
     @Override
@@ -29,7 +29,7 @@ public class AdropmoneyCMD extends CommandBase implements IClientCommand {
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (!(sender instanceof EntityPlayer)) return;
         if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
-            Adropmanager.adropmoney();
+            Adropmanager.adropschwarzpulver();
             return;
         }
     }
@@ -38,4 +38,5 @@ public class AdropmoneyCMD extends CommandBase implements IClientCommand {
     public boolean checkPermission(MinecraftServer server, ICommandSender sender) {
         return true;
     }
+
 }
