@@ -1,4 +1,4 @@
-package net.CrystalRage.crystension.badfrak.giftdrug;
+package net.CrystalRage.crystension.command.BadFrak.giftdrug;
 
 import com.google.common.collect.Lists;
 import net.CrystalRage.crystension.Ucmodify;

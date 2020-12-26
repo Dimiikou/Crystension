@@ -183,12 +183,20 @@ public class ConfigHandler {
     public static int NC_FrakschaedigungPreis = 4000;
 
     private static int IE_before = IE_UpdateDelay;
+    private static boolean fraknames = IA_ActivateFrakNameHighlighter;
 
     @SubscribeEvent
     public static void onConfigChange(ConfigChangedEvent e) {
         if (e == null || e.getModID().equals(Ucmodify.MODID)) {
             ConfigManager.sync(Ucmodify.MODID, Config.Type.INSTANCE);
 
+            if (fraknames != IA_ActivateFrakNameHighlighter) {
+                if (!IA_ActivateFrakNameHighlighter) {
+                    FrakListFiller.t.cancel();
+                } else {
+                    FrakListFiller.startTimer();
+                }
+            }
             if (IE_before != IE_UpdateDelay) {
                 FrakListFiller.t.cancel();
                 FrakListFiller.startTimer();

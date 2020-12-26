@@ -22,9 +22,9 @@ import java.util.*;
 
 @SideOnly(Side.CLIENT)
 public class Eigenbedarf extends CommandBase implements IClientCommand {
-    public static boolean gras = false;
-    public static boolean koks = false;
-    public static boolean meth = false;
+    private boolean gras = false;
+    private boolean koks = false;
+    private boolean meth = false;
 
 
     @Override
@@ -56,9 +56,12 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     Eigenbedarf Gras 1. Droge
                      */
                 if (ConfigHandler.KA_EigenbedarfGras) {
+                    if (ConfigHandler.KC_GrasMenge > 0 && (ConfigHandler.KB_GrasReinheit >= 0 && ConfigHandler.KB_GrasReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
 
-
-                    p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
                     gras=true;
                     Timer t = new Timer();
                     t.schedule(new TimerTask() {
@@ -66,24 +69,35 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                         public void run() {
                             //Drogen Rausnahme
                             if (ConfigHandler.KD_EigenbedarfKoks) {
-                                p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
+                                if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
+                                    p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
+                                } else {
+                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                }
                                 koks=true;
                             } else if (ConfigHandler.KG_EigenbedarfMeth) {
-                                p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                                if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
+                                    p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                                } else {
+                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                }
+
                                 meth=true;
                             }
                             // 3.Drogen Rausnahme
-                            Timer s = new Timer();
-                            s.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    if (ConfigHandler.KD_EigenbedarfKoks && !(koks)) {
-                                        p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
-                                    } else if (ConfigHandler.KG_EigenbedarfMeth && !(meth)) {
-                                        p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                            if (!meth && ConfigHandler.KG_EigenbedarfMeth) {
+                                Timer s = new Timer();
+                                s.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
+                                            p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                                        } else {
+                                            p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                        }
                                     }
-                                }
-                            }, 1500);
+                                }, 1500);
+                            }
 
                         }
                     }, 1500);
@@ -91,32 +105,24 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     Eigenbedarf Koks 1. Droge
                      */
                 } else if (ConfigHandler.KD_EigenbedarfKoks) {
-                    p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
+                    if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
                     koks=true;
                     Timer t = new Timer();
                     t.schedule(new TimerTask() {
                         @Override
                         public void run() {
-                            //Drogen Rausnahme
-                            if (ConfigHandler.KA_EigenbedarfGras) {
-                                p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
-                                gras=true;
-                            } else if (ConfigHandler.KG_EigenbedarfMeth) {
-                                p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                            if (ConfigHandler.KG_EigenbedarfMeth) {
+                                if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
+                                    p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                                } else {
+                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                }
                                 meth=true;
                             }
-                            // 3.Drogen Rausnahme
-                            Timer s = new Timer();
-                            s.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    if (ConfigHandler.KA_EigenbedarfGras && !(gras)) {
-                                        p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
-                                    } else if (ConfigHandler.KG_EigenbedarfMeth && !(meth)) {
-                                        p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
-                                    }
-                                }
-                            }, 1500);
 
                         }
                     }, 1500);
@@ -124,40 +130,35 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     Eigenbedarf Meth 1. Droge
                      */
                 } else if (ConfigHandler.KG_EigenbedarfMeth) {
-                    p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                    if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
                     meth=true;
-                    Timer t = new Timer();
-                    t.schedule(new TimerTask() {
-                        @Override
-                        public void run() {
-                            //Drogen Rausnahme
-                            if (ConfigHandler.KA_EigenbedarfGras) {
-                                p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
-                                gras=true;
-                            } else if (ConfigHandler.KD_EigenbedarfKoks) {
-                                p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
-                                koks=true;
-                            }
-                            // 3.Drogen Rausnahme
-                            Timer s = new Timer();
-                            s.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
-                                    if (ConfigHandler.KA_EigenbedarfGras && !(gras)) {
-                                        p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
-                                    } else if (ConfigHandler.KD_EigenbedarfKoks && !(koks)) {
-                                        p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
-                                    }
-                                }
-                            }, 1500);
-
-                        }
-                    }, 1500);
                 } else {
                     p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du hast alle Drogen für den Eigenbedarf deaktiviert."));
                 }
             } else if (args.length == 1){
-
+                if (args[0].equalsIgnoreCase("Gras") || args[0].equalsIgnoreCase("Weed") || args[0].equalsIgnoreCase("Marihuana")) {
+                    if (ConfigHandler.KC_GrasMenge > 0 && (ConfigHandler.KB_GrasReinheit >= 0 && ConfigHandler.KB_GrasReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
+                } else if (args[0].equalsIgnoreCase("Koks") || args[0].equalsIgnoreCase("Kokain")) {
+                    if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
+                } else if (args[0].equalsIgnoreCase("Meth") || args[0].equalsIgnoreCase("Methamphetamin")) {
+                    if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
+                        p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
+                    } else {
+                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    }
+                }
             } else {
                 p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/eigenbedarf"));
                 p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/eigenbedarf §7<§eDroge§7>"));
@@ -172,40 +173,16 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
         return true;
     }
 
-    public List<String> getTabCompletions(EntityPlayerSP p, String[] args) {
-        if (args.length == 1) {
-            return Collections.emptyList();
-        } else if (args.length == 2) {
-            List<String> list = new ArrayList<>();
-            list.add("0");
-            list.add("1");
-            list.add("2");
-            list.add("3");
-            return list;
-        }
-
-        return null;
-
-    }
-
     public List getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args, BlockPos targetPos) {
-        NetHandlerPlayClient connection = Minecraft.getMinecraft().player.connection;
-        List<NetworkPlayerInfo> playerInfo = new ArrayList(connection.getPlayerInfoMap());
-        List<String> playerList = Lists.<String>newArrayList();
         if (args.length==1) {
-            for (int i = 0; i < playerInfo.size(); ++i) {
-                if (i < playerInfo.size()) {
-                    playerList.add(playerInfo.get(i).getGameProfile().getName());
-                }
-            }
-            return CommandBase.getListOfStringsMatchingLastWord(args, playerList);
-        }
-        if (args.length==2) {
             ArrayList<String> list = new ArrayList<>();
-            list.add("0");
-            list.add("1");
-            list.add("2");
-            list.add("3");
+            list.add("Gras");
+            list.add("Weed");
+            list.add("Marihuana");
+            list.add("Koks");
+            list.add("Kokain");
+            list.add("Meth");
+            list.add("Methamphetamin");
             return list;
         }
         return new ArrayList();

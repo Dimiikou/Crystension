@@ -1,4 +1,4 @@
-package net.CrystalRage.crystension.badfrak.drugsell;
+package net.CrystalRage.crystension.command.BadFrak.giftdrug;
 
 import com.google.common.collect.Lists;
 import net.CrystalRage.crystension.Ucmodify;
@@ -19,10 +19,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @SideOnly(Side.CLIENT)
-public class MethCommand extends CommandBase implements IClientCommand {
+public class Giftgras extends CommandBase implements IClientCommand {
 
     @Override
     public boolean allowUsageWithoutPrefix(ICommandSender sender, String message) {
@@ -31,7 +32,7 @@ public class MethCommand extends CommandBase implements IClientCommand {
 
     @Override
     public String getName() {
-        return "meth";
+        return "giftgras";
     }
 
     @Override
@@ -51,37 +52,37 @@ public class MethCommand extends CommandBase implements IClientCommand {
                 int menge = Integer.valueOf(args[2]);
                 if (reinheit == 0) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Meth 0 " + menge + " " + (menge * ConfigHandler.FA_NullerMeth));
+                        p.sendChatMessage("/selldrug " + player + " Gras 0 " + menge + " " + 1);
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 1) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Meth 1 " + menge + " " + (menge * ConfigHandler.FB_EinserMeth));
+                        p.sendChatMessage("/selldrug " + player + " Gras 1 " + menge + " " + 1);
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 2) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Meth 2 " + menge + " " + (menge * ConfigHandler.FC_ZweierMeth));
+                        p.sendChatMessage("/selldrug " + player + " Gras 2 " + menge + " " + 1);
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 3) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Meth 3 " + menge + " " + (menge * ConfigHandler.FD_DreierMeth));
+                        p.sendChatMessage("/selldrug " + player + " Gras 3 " + menge + " " + 1);
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else {
                     p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0 §7- §e" + ConfigHandler.FA_NullerMeth));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1 §7- §e" + ConfigHandler.FB_EinserMeth));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2 §7- §e" + ConfigHandler.FC_ZweierMeth));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3 §7- §e" + ConfigHandler.FD_DreierMeth));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0"));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1"));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2"));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3"));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/meth §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/giftgras §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
             }
 
             return;
@@ -115,4 +116,5 @@ public class MethCommand extends CommandBase implements IClientCommand {
         }
         return new ArrayList();
     }
+
 }

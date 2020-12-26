@@ -1,4 +1,4 @@
-package net.CrystalRage.crystension.badfrak.giftdrug;
+package net.CrystalRage.crystension.command.BadFrak.drugsell;
 
 import com.google.common.collect.Lists;
 import net.CrystalRage.crystension.Ucmodify;
@@ -19,11 +19,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SideOnly(Side.CLIENT)
-public class Giftgras extends CommandBase implements IClientCommand {
+public class KoksCommand extends CommandBase implements IClientCommand {
+
 
     @Override
     public boolean allowUsageWithoutPrefix(ICommandSender sender, String message) {
@@ -32,7 +32,7 @@ public class Giftgras extends CommandBase implements IClientCommand {
 
     @Override
     public String getName() {
-        return "giftgras";
+        return "koks";
     }
 
     @Override
@@ -52,37 +52,37 @@ public class Giftgras extends CommandBase implements IClientCommand {
                 int menge = Integer.valueOf(args[2]);
                 if (reinheit == 0) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Gras 0 " + menge + " " + 1);
+                        p.sendChatMessage("/selldrug " + player + " Koks 0 " + menge + " " + (menge * ConfigHandler.EA_NullerKoks));
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 1) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Gras 1 " + menge + " " + 1);
+                        p.sendChatMessage("/selldrug " + player + " Koks 1 " + menge + " " + (menge * ConfigHandler.EB_EinserKoks));
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 2) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Gras 2 " + menge + " " + 1);
+                        p.sendChatMessage("/selldrug " + player + " Koks 2 " + menge + " " + (menge * ConfigHandler.EC_ZweierKoks));
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 3) {
                     if (menge > 0) {
-                        p.sendChatMessage("/selldrug " + player + " Gras 3 " + menge + " " + 1);
+                        p.sendChatMessage("/selldrug " + player + " Koks 3 " + menge + " " + (menge * ConfigHandler.ED_DreierKoks));
                     } else {
                         p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else {
                     p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0"));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1"));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2"));
-                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3"));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0 §7- §e" + ConfigHandler.EA_NullerKoks));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1 §7- §e" + ConfigHandler.EB_EinserKoks));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2 §7- §e" + ConfigHandler.EC_ZweierKoks));
+                    p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3 §7- §e" + ConfigHandler.ED_DreierKoks));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/giftgras §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/koks §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
             }
 
             return;

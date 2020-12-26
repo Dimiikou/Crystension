@@ -1,13 +1,14 @@
 package net.CrystalRage.crystension;
 
-import net.CrystalRage.crystension.badfrak.drugsell.GrasCommand;
-import net.CrystalRage.crystension.badfrak.drugsell.KoksCommand;
-import net.CrystalRage.crystension.badfrak.drugsell.LSDCommand;
-import net.CrystalRage.crystension.badfrak.drugsell.MethCommand;
-import net.CrystalRage.crystension.badfrak.giftdrug.Giftgras;
-import net.CrystalRage.crystension.badfrak.giftdrug.Giftkoks;
-import net.CrystalRage.crystension.badfrak.giftdrug.Giftlsd;
-import net.CrystalRage.crystension.badfrak.giftdrug.Giftmeth;
+import net.CrystalRage.crystension.command.BadFrak.Gifteigenbedarf;
+import net.CrystalRage.crystension.command.BadFrak.drugsell.GrasCommand;
+import net.CrystalRage.crystension.command.BadFrak.drugsell.KoksCommand;
+import net.CrystalRage.crystension.command.BadFrak.drugsell.LSDCommand;
+import net.CrystalRage.crystension.command.BadFrak.drugsell.MethCommand;
+import net.CrystalRage.crystension.command.BadFrak.giftdrug.Giftgras;
+import net.CrystalRage.crystension.command.BadFrak.giftdrug.Giftkoks;
+import net.CrystalRage.crystension.command.BadFrak.giftdrug.Giftlsd;
+import net.CrystalRage.crystension.command.BadFrak.giftdrug.Giftmeth;
 import net.CrystalRage.crystension.command.BadFrak.Eigenbedarf;
 import net.CrystalRage.crystension.command.jobs.Adropmanager;
 import net.CrystalRage.crystension.command.jobs.jobcommands.AdropmoneyCMD;
@@ -82,6 +83,7 @@ public class Ucmodify {
         ClientCommandHandler.instance.registerCommand(new LSDCommand());
         ClientCommandHandler.instance.registerCommand(new MethCommand());
         ClientCommandHandler.instance.registerCommand(new Eigenbedarf());
+        ClientCommandHandler.instance.registerCommand(new Gifteigenbedarf());
 
         ClientCommandHandler.instance.registerCommand(new Giftgras());
         ClientCommandHandler.instance.registerCommand(new Giftkoks());
@@ -100,6 +102,7 @@ public class Ucmodify {
         MinecraftForge.EVENT_BUS.register(new Toggleadd());
         MinecraftForge.EVENT_BUS.register(new HQNachrichten());
         MinecraftForge.EVENT_BUS.register(new Togglenews());
+        MinecraftForge.EVENT_BUS.register(new Gifteigenbedarf());
 
         FrakListFiller.startTimer();
     }

@@ -1,4 +1,4 @@
-package net.CrystalRage.crystension.badfrak.drugsell;
+package net.CrystalRage.crystension.command.BadFrak.drugsell;
 
 import com.google.common.collect.Lists;
 import net.CrystalRage.crystension.Ucmodify;
