@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.listeners;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.command.medics.DChatSperre;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.FrakListFiller;
@@ -260,9 +260,9 @@ public class ChatEvent {
 		}
 
 		if (e.getMessage().getUnformattedText().contains("Du bist nun im AFK")) {
-			Ucmodify.AFK = true;
+			Crystension.AFK = true;
 		} else if (e.getMessage().getUnformattedText().contains("Du bist nun nicht mehr im AFK")) {
-			Ucmodify.AFK = false;
+			Crystension.AFK = false;
 			FrakListFiller.loading = false;
 		}
 

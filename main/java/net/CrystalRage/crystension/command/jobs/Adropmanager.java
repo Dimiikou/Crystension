@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.command.jobs;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -81,7 +81,7 @@ public class Adropmanager {
                             @Override
                             public void run() {
                                 dropmoney = false;
-                                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst ab jetzt weitergehen."));
+                                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst ab jetzt weitergehen."));
                             }
                         }, 200);
                     }

@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.listeners;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
@@ -15,7 +15,7 @@ public class Togglenews {
 
     @SubscribeEvent
     public static void onChat(ClientChatReceivedEvent e) {
-        EntityPlayerSP p = Ucmodify.minecraft.player;
+        EntityPlayerSP p = Crystension.minecraft.player;
         String msg = e.getMessage().getUnformattedText();
 
         if (ConfigHandler.MB_NewsBlockieren) {

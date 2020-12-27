@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.command.universal.universalcommands;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
@@ -31,10 +31,10 @@ public class Checkafk extends CommandBase implements IClientCommand  {
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (!(sender instanceof EntityPlayer)) return;
         if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
-            if (Ucmodify.AFK) {
-                sender.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du bist AFK."));
+            if (Crystension.AFK) {
+                sender.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du bist AFK."));
             } else {
-                sender.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du bist nicht AFK."));
+                sender.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du bist nicht AFK."));
             }
             return;
         }

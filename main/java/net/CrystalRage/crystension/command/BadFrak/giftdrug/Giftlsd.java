@@ -1,7 +1,7 @@
 package net.CrystalRage.crystension.command.BadFrak.giftdrug;
 
 import com.google.common.collect.Lists;
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
@@ -52,10 +52,10 @@ public class Giftlsd extends CommandBase implements IClientCommand {
                 if (menge > 0) {
                     p.sendChatMessage("/selldrug " + player + " lsd 0 " + menge + " " + (menge * ConfigHandler.GA_LSD));
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/lsd §7<§eSpielername§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/lsd §7<§eSpielername§7> <§eMenge§7>§8."));
             }
             return;
         }

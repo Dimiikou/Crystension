@@ -1,7 +1,7 @@
 package net.CrystalRage.crystension.command.BadFrak.drugsell;
 
 import com.google.common.collect.Lists;
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
@@ -19,7 +19,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SideOnly(Side.CLIENT)
@@ -54,35 +53,35 @@ public class GrasCommand extends CommandBase implements IClientCommand {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Gras 0 " + menge + " " + (menge * ConfigHandler.DA_NullerGras));
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 1) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Gras 1 " + menge + " " + (menge * ConfigHandler.DB_EinserGras));
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 2) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Gras 2 " + menge + " " + (menge * ConfigHandler.DC_ZweierGras));
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 3) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Gras 3 " + menge + " " + (menge * ConfigHandler.DD_DreierGras));
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0 §7- §e" + ConfigHandler.DA_NullerGras));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1 §7- §e" + ConfigHandler.DB_EinserGras));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2 §7- §e" + ConfigHandler.DC_ZweierGras));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3 §7- §e" + ConfigHandler.DD_DreierGras));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/gras §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/gras §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
             }
 
             return;

@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.methods;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.listeners.NametagChanger;
 import net.minecraft.client.Minecraft;
@@ -74,9 +74,9 @@ public class FrakListFiller {
                         size = size+FACTION_MEMBERS.get(ConfigHandler.ID_BuendnissFraktionZwei).size();
                     }
                     if(size <= 0) {
-                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Es wuden §ekeine§7 Bündnissmitglieder gefunden."));
+                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Es wuden §ekeine§7 Bündnissmitglieder gefunden."));
                     } else {
-                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Es wurden §e"+size+" §7Bündnissmitglieder geladen."));
+                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Es wurden §e"+size+" §7Bündnissmitglieder geladen."));
                         Timer t = new Timer();
                         t.schedule(new TimerTask() {
                             @Override
@@ -122,7 +122,7 @@ public class FrakListFiller {
             public void run() {
                 if (ConfigHandler.IA_ActivateFrakNameHighlighter) {
                     if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
-                        if (!Ucmodify.AFK) {
+                        if (!Crystension.AFK) {
                             load();
                         }
                     }

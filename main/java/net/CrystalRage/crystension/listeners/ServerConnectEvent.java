@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.listeners;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.FrakListFiller;
 import net.minecraft.client.Minecraft;
@@ -29,7 +29,7 @@ public class ServerConnectEvent {
                     @Override
                     public void run() {
                         if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
-                            if (!Ucmodify.AFK) {
+                            if (!Crystension.AFK) {
                                 startrendering = true;
                                 FrakListFiller.load();
                             }

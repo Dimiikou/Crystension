@@ -43,12 +43,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 
-@Mod(modid = Ucmodify.MODID, name = Ucmodify.NAME, version = Ucmodify.VERSION, clientSideOnly = true)
+@Mod(modid = Crystension.MODID, name = Crystension.NAME, version = Crystension.VERSION, clientSideOnly = true)
 @SideOnly(Side.CLIENT)
-public class Ucmodify {
+public class Crystension {
     public static final String MODID = "crystension";
     public static final String NAME = "Crystension";
-    public static final String VERSION = "2.1.2";
+    public static final String VERSION = "2.2.1";
     public static String prefix = "\2473Crystension \2478\u25CF\2477 ";
     private static Logger logger;
     public static Minecraft minecraft = Minecraft.getMinecraft();

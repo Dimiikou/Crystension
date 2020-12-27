@@ -1,13 +1,10 @@
 package net.CrystalRage.crystension.command.BadFrak;
 
-import com.google.common.collect.Lists;
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.network.NetHandlerPlayClient;
-import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -59,7 +56,7 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     if (ConfigHandler.KC_GrasMenge > 0 && (ConfigHandler.KB_GrasReinheit >= 0 && ConfigHandler.KB_GrasReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
 
                     gras=true;
@@ -72,14 +69,14 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                                 if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
                                     p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
                                 } else {
-                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                                 }
                                 koks=true;
                             } else if (ConfigHandler.KG_EigenbedarfMeth) {
                                 if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                                     p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
                                 } else {
-                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                                 }
 
                                 meth=true;
@@ -93,7 +90,7 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                                         if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                                             p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
                                         } else {
-                                            p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                            p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                                         }
                                     }
                                 }, 1500);
@@ -108,7 +105,7 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     koks=true;
                     Timer t = new Timer();
@@ -119,7 +116,7 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                                 if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                                     p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
                                 } else {
-                                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                                 }
                                 meth=true;
                             }
@@ -133,35 +130,35 @@ public class Eigenbedarf extends CommandBase implements IClientCommand {
                     if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     meth=true;
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du hast alle Drogen für den Eigenbedarf deaktiviert."));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du hast alle Drogen für den Eigenbedarf deaktiviert."));
                 }
             } else if (args.length == 1){
                 if (args[0].equalsIgnoreCase("Gras") || args[0].equalsIgnoreCase("Weed") || args[0].equalsIgnoreCase("Marihuana")) {
                     if (ConfigHandler.KC_GrasMenge > 0 && (ConfigHandler.KB_GrasReinheit >= 0 && ConfigHandler.KB_GrasReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Gras " + ConfigHandler.KC_GrasMenge + " " + ConfigHandler.KB_GrasReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                 } else if (args[0].equalsIgnoreCase("Koks") || args[0].equalsIgnoreCase("Kokain")) {
                     if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Koks " + ConfigHandler.KF_KoksMenge + " " + ConfigHandler.KE_KoksReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                 } else if (args[0].equalsIgnoreCase("Meth") || args[0].equalsIgnoreCase("Methamphetamin")) {
                     if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                         p.sendChatMessage("/dbank get Meth " + ConfigHandler.KI_MethMenge + " " + ConfigHandler.KH_MethReinheit);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/eigenbedarf"));
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/eigenbedarf §7<§eDroge§7>"));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/eigenbedarf"));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/eigenbedarf §7<§eDroge§7>"));
             }
 
             return;

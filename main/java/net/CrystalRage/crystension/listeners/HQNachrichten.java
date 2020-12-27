@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.listeners;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -16,7 +16,7 @@ public class HQNachrichten {
 
     @SubscribeEvent
     public static void onChat(ClientChatReceivedEvent e) {
-        EntityPlayerSP p = Ucmodify.minecraft.player;
+        EntityPlayerSP p = Crystension.minecraft.player;
         String msg = e.getMessage().getUnformattedText();
         String[] s = msg.split(" ");
 

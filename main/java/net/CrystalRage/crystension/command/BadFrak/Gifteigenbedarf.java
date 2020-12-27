@@ -1,7 +1,7 @@
 package net.CrystalRage.crystension.command.BadFrak;
 
 import com.google.common.collect.Lists;
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.handlers.ConfigHandler;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
@@ -20,7 +20,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sun.security.krb5.Config;
 
 import java.util.*;
 
@@ -67,7 +66,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                         }
 
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eGras §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                 } else if (ConfigHandler.KD_EigenbedarfKoks) {
                     if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
@@ -77,14 +76,14 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                             checkmeth = true;
                         }
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     checkkoks = true;
                 } else if (ConfigHandler.KG_EigenbedarfMeth) {
                     if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                         p.sendChatMessage("/selldrug " + target + " Meth " + ConfigHandler.KE_KoksReinheit + " " + ConfigHandler.KF_KoksMenge + " 1");
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     checkmeth = true;
 
@@ -92,7 +91,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                     p.sendMessage(ColorMessage.getMSG("Bitte nehm einstellung beim §eEigenbedarf §7vor."));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/gifteigenbedarf §7<§eSpielername§7>."));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/gifteigenbedarf §7<§eSpielername§7>."));
             }
 
             return;
@@ -139,7 +138,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                         checkmeth = true;
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 }
 
                 checkkoks=false;
@@ -151,7 +150,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                         checkmeth = true;
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 }
 
                 checkkoks=false;
@@ -161,7 +160,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                 if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                     p.sendChatMessage("/selldrug " + target + " Meth " + ConfigHandler.KE_KoksReinheit + " " + ConfigHandler.KF_KoksMenge + " 1");
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 } checkmeth=false;
             } else if (msg.contains("[Deal]") && msg.contains("hat den Deal abgelehnt.")) {
                 checkmeth=false;

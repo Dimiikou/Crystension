@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.handlers;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.CrystalRage.crystension.methods.FrakListFiller;
 import net.minecraftforge.common.config.Config;
@@ -9,7 +9,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Config(modid = Ucmodify.MODID, name = Ucmodify.NAME)
+@Config(modid = Crystension.MODID, name = Crystension.NAME)
 @Mod.EventBusSubscriber
 public class ConfigHandler {
 
@@ -187,8 +187,8 @@ public class ConfigHandler {
 
     @SubscribeEvent
     public static void onConfigChange(ConfigChangedEvent e) {
-        if (e == null || e.getModID().equals(Ucmodify.MODID)) {
-            ConfigManager.sync(Ucmodify.MODID, Config.Type.INSTANCE);
+        if (e == null || e.getModID().equals(Crystension.MODID)) {
+            ConfigManager.sync(Crystension.MODID, Config.Type.INSTANCE);
 
             if (fraknames != IA_ActivateFrakNameHighlighter) {
                 if (!IA_ActivateFrakNameHighlighter) {
@@ -204,7 +204,7 @@ public class ConfigHandler {
 
             if (IE_UpdateDelay < 5) {
                 IE_UpdateDelay = 5;
-                Ucmodify.minecraft.player.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Der Wert für §eIE_UpdateDelay §7muss über §e5 §7liegen."));
+                Crystension.minecraft.player.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Der Wert für §eIE_UpdateDelay §7muss über §e5 §7liegen."));
             }
 
         }

@@ -1,6 +1,6 @@
 package net.CrystalRage.crystension.command.medics.mediccommands;
 
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -28,7 +28,7 @@ public class Separateleichen {
     private static String SONDERZEICHEN = "\u00BB";
 
     private static String getMSG(String msg) {
-        return Ucmodify.prefix + msg;
+        return Crystension.prefix + msg;
     }
 
     public static void onCommand() {

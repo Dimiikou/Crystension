@@ -1,7 +1,7 @@
 package net.CrystalRage.crystension.command.BadFrak.giftdrug;
 
 import com.google.common.collect.Lists;
-import net.CrystalRage.crystension.Ucmodify;
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -52,35 +52,35 @@ public class Giftkoks extends CommandBase implements IClientCommand {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Koks 0 " + menge + " " + 1);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 1) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Koks 1 " + menge + " " + 1);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 2) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Koks 2 " + menge + " " + 1);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else if (reinheit == 3) {
                     if (menge > 0) {
                         p.sendChatMessage("/selldrug " + player + " Koks 3 " + menge + " " + 1);
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
+                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "§7Bitte gib einen der folgenen Reinheitsgrade an:"));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e0"));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e1"));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e2"));
                     p.sendMessage(ColorMessage.getMSG(" §8\u25CF §e3"));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "/giftkoks §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/giftkoks §7<§eSpielername§7> <§eReinheit in Zahl§7> <§eMenge§7>§8."));
             }
 
             return;
