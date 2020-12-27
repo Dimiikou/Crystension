@@ -51,10 +51,10 @@ public class LSDCommand extends CommandBase implements IClientCommand {
                 if (menge > 0) {
                     p.sendChatMessage("/selldrug " + player + " lsd 0 " + menge + " " + 1);
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du kannst erst Drogen ab einem Gramm verkaufen."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Du kannst erst Drogen ab einem Gramm verkaufen."));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/lsd §7<§eSpielername§7> <§eMenge§7>§8."));
+                p.sendMessage(ColorMessage.getMSGwithPrefix("/lsd §7<§eSpielername§7> <§eMenge§7>§8."));
             }
             return;
         }

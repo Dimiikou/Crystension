@@ -15,7 +15,7 @@ import net.CrystalRage.crystension.command.jobs.jobcommands.AdropmoneyCMD;
 import net.CrystalRage.crystension.command.jobs.jobcommands.AdropschwarzpulverCMD;
 import net.CrystalRage.crystension.command.medics.DChatSperre;
 import net.CrystalRage.crystension.command.medics.mediccommands.DChatSperrecommand;
-import net.CrystalRage.crystension.command.medics.mediccommands.MainCommand;
+import net.CrystalRage.crystension.command.medics.mediccommands.Separateleichencmd;
 import net.CrystalRage.crystension.command.medics.mediccommands.Separateleichen;
 import net.CrystalRage.crystension.command.universal.Einzahlen;
 import net.CrystalRage.crystension.command.universal.Reichensteuer;
@@ -70,7 +70,7 @@ public class Crystension {
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-        ClientCommandHandler.instance.registerCommand(new MainCommand());
+        ClientCommandHandler.instance.registerCommand(new Separateleichencmd());
         ClientCommandHandler.instance.registerCommand(new RsCommand());
         ClientCommandHandler.instance.registerCommand(new DChatSperrecommand());
         ClientCommandHandler.instance.registerCommand(new AdropmoneyCMD());

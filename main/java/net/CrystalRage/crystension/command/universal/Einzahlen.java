@@ -58,7 +58,7 @@ public class Einzahlen extends CommandBase implements IClientCommand {
                         p.sendChatMessage("/bank einzahlen " + money);
                         money=0;
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du hast kein Geld auf der Hand."));
+                        p.sendMessage(ColorMessage.getMSGwithPrefix("Du hast kein Geld auf der Hand."));
                     }
                     start=false;
                 }

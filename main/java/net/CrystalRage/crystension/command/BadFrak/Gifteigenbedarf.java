@@ -76,22 +76,22 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                             checkmeth = true;
                         }
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSGwithPrefix("Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     checkkoks = true;
                 } else if (ConfigHandler.KG_EigenbedarfMeth) {
                     if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                         p.sendChatMessage("/selldrug " + target + " Meth " + ConfigHandler.KE_KoksReinheit + " " + ConfigHandler.KF_KoksMenge + " 1");
                     } else {
-                        p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                        p.sendMessage(ColorMessage.getMSGwithPrefix("Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                     }
                     checkmeth = true;
 
                 } else {
-                    p.sendMessage(ColorMessage.getMSG("Bitte nehm einstellung beim §eEigenbedarf §7vor."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Bitte nehm einstellung beim §eEigenbedarf §7vor."));
                 }
             } else {
-                p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "/gifteigenbedarf §7<§eSpielername§7>."));
+                p.sendMessage(ColorMessage.getMSGwithPrefix("/gifteigenbedarf §7<§eSpielername§7>."));
             }
 
             return;
@@ -138,7 +138,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                         checkmeth = true;
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 }
 
                 checkkoks=false;
@@ -150,7 +150,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                         checkmeth = true;
                     }
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 }
 
                 checkkoks=false;
@@ -160,7 +160,7 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
                 if (ConfigHandler.KI_MethMenge > 0 && (ConfigHandler.KH_MethReinheit >= 0 && ConfigHandler.KH_MethReinheit <= 3)) {
                     p.sendChatMessage("/selldrug " + target + " Meth " + ConfigHandler.KE_KoksReinheit + " " + ConfigHandler.KF_KoksMenge + " 1");
                 } else {
-                    p.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Deine Menge für §eMeth §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 } checkmeth=false;
             } else if (msg.contains("[Deal]") && msg.contains("hat den Deal abgelehnt.")) {
                 checkmeth=false;

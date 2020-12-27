@@ -1,5 +1,6 @@
 package net.CrystalRage.crystension.methods;
 
+import net.CrystalRage.crystension.Crystension;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -33,6 +34,34 @@ public class ColorMessage {
 			msg = msg.replace("ß", "\u00df");
 		}
 		return new TextComponentString(msg);
+	}
+
+	public static TextComponentString getMSGwithPrefix(String msg) {
+		if(msg.contains("§")) {
+			msg = msg.replace("§", "\247");
+		}
+		if(msg.contains("ä")) {
+			msg = msg.replace("ä", "\u00e4");
+		}
+		if(msg.contains("Ä")) {
+			msg = msg.replace("Ä", "\u00c4");
+		}
+		if(msg.contains("ö")) {
+			msg = msg.replace("ö", "\u00f6");
+		}
+		if(msg.contains("Ö")) {
+			msg = msg.replace("Ö", "\u00d6");
+		}
+		if(msg.contains("ü")) {
+			msg = msg.replace("ü", "\u00fc");
+		}
+		if(msg.contains("Ü")) {
+			msg = msg.replace("Ü", "\u00dc");
+		}
+		if(msg.contains("ß")) {
+			msg = msg.replace("ß", "\u00df");
+		}
+		return new TextComponentString(Crystension.prefix + msg);
 	}
 
 	public static String getString(String msg) {

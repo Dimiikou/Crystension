@@ -27,10 +27,6 @@ public class Separateleichen {
     private static String currentLoading;
     private static String SONDERZEICHEN = "\u00BB";
 
-    private static String getMSG(String msg) {
-        return Crystension.prefix + msg;
-    }
-
     public static void onCommand() {
         if(!isLoaded()) {
             load();
@@ -88,9 +84,9 @@ public class Separateleichen {
                     size = size+FACTION_MEMBERS.get("Polizei").size();
                     size = size+FACTION_MEMBERS.get("FBI").size();
                     if(size <= 0) {
-                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(getMSG("Es wuden §ekeine§7 Staatsmitglieder gefunden.")));
+                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSGwithPrefix("Es wuden §ekeine§7 Staatsmitglieder gefunden."));
                     } else {
-                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSG(getMSG("Es wurden §e"+size+" §7Staatsmitglieder geladen.")));
+                        Minecraft.getMinecraft().player.sendMessage(ColorMessage.getMSGwithPrefix("Es wurden §e"+size+" §7Staatsmitglieder geladen."));
 
                     }
                 }
@@ -149,11 +145,11 @@ public class Separateleichen {
         }
         String msg = "";
         if(gesamt <= 0) {
-            msg = getMSG("§eKeine §7(neuen) Leichen gefunden.");
+            msg = "§eKeine §7(neuen) Leichen gefunden.";
         } else {
-            msg = getMSG("§e"+gesamt+" §7Leiche/n wurde/n identifiziert.");
+            msg = "§e"+gesamt+" §7Leiche/n wurde/n identifiziert.";
             if(umgebung >= 1 && gesamt != umgebung) {
-                msg = msg+" §8(§7Davon §e"+gesamt+"§7 im Umkreis von 75m§8)";
+                msg = ColorMessage.getString(Crystension.prefix + msg + " §8(§7Davon §e"+gesamt+"§7 im Umkreis von 75m§8)");
             }
         }
         p.sendMessage(ColorMessage.getMSG(msg));

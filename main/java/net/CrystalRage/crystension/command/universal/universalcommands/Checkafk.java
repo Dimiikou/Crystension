@@ -32,9 +32,9 @@ public class Checkafk extends CommandBase implements IClientCommand  {
         if (!(sender instanceof EntityPlayer)) return;
         if (Minecraft.getMinecraft().getCurrentServerData().serverIP.toLowerCase().contains("unicacity.de")) {
             if (Crystension.AFK) {
-                sender.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du bist AFK."));
+                sender.sendMessage(ColorMessage.getMSGwithPrefix("Du bist AFK."));
             } else {
-                sender.sendMessage(ColorMessage.getMSG(Crystension.prefix + "Du bist nicht AFK."));
+                sender.sendMessage(ColorMessage.getMSGwithPrefix("Du bist nicht AFK."));
             }
             return;
         }

@@ -1,5 +1,6 @@
 package net.CrystalRage.crystension.command.universal;
 
+import net.CrystalRage.crystension.Crystension;
 import net.CrystalRage.crystension.methods.ColorMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -30,7 +31,7 @@ public class Reichensteuer {
                 if (i>0) {
                     p.sendChatMessage("/bank abbuchen " + i);
                 } else {
-                    p.sendMessage(ColorMessage.getMSG("Dein Kontostand ist bereits auf §e99999§7."));
+                    p.sendMessage(ColorMessage.getMSGwithPrefix("Dein Kontostand ist bereits auf §e99999§7."));
                 }
 
             }
