@@ -144,10 +144,17 @@ public class Gifteigenbedarf extends CommandBase implements IClientCommand {
 
                 checkkoks=false;
             } else if (msg.contains("[Deal]") && msg.contains("hat den Deal abgelehnt.")) {
-                checkkoks=false;
-                if (ConfigHandler.KG_EigenbedarfMeth) {
-                    checkmeth=true;
+                if (ConfigHandler.KF_KoksMenge > 0 && (ConfigHandler.KE_KoksReinheit >= 0 && ConfigHandler.KE_KoksReinheit <= 3)) {
+                    p.sendChatMessage("/selldrug " + target + " Koks " + ConfigHandler.KE_KoksReinheit + " " + ConfigHandler.KF_KoksMenge + " 1");
+
+                    if (ConfigHandler.KG_EigenbedarfMeth) {
+                        checkmeth = true;
+                    }
+                } else {
+                    p.sendMessage(ColorMessage.getMSG(Ucmodify.prefix + "Deine Menge für §eKoks §7muss mindestens §e1 §7betragen und die Reinheit einen wert zwischen §e0 §7und §e3§7."));
                 }
+
+                checkkoks=false;
             }
         } else if (checkmeth) {
             if (msg.contains("[Deal]") && msg.contains("hat den Deal angenommen.")) {

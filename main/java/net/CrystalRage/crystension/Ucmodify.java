@@ -17,6 +17,7 @@ import net.CrystalRage.crystension.command.medics.DChatSperre;
 import net.CrystalRage.crystension.command.medics.mediccommands.DChatSperrecommand;
 import net.CrystalRage.crystension.command.medics.mediccommands.MainCommand;
 import net.CrystalRage.crystension.command.medics.mediccommands.Separateleichen;
+import net.CrystalRage.crystension.command.universal.Einzahlen;
 import net.CrystalRage.crystension.command.universal.Reichensteuer;
 import net.CrystalRage.crystension.command.universal.universalcommands.Checkafk;
 import net.CrystalRage.crystension.command.universal.universalcommands.RefreshFrakList;
@@ -74,6 +75,7 @@ public class Ucmodify {
         ClientCommandHandler.instance.registerCommand(new DChatSperrecommand());
         ClientCommandHandler.instance.registerCommand(new AdropmoneyCMD());
         ClientCommandHandler.instance.registerCommand(new AdropschwarzpulverCMD());
+        ClientCommandHandler.instance.registerCommand(new Einzahlen());
 
         ClientCommandHandler.instance.registerCommand(new RefreshFrakList());
         ClientCommandHandler.instance.registerCommand(new Checkafk());
@@ -103,6 +105,7 @@ public class Ucmodify {
         MinecraftForge.EVENT_BUS.register(new HQNachrichten());
         MinecraftForge.EVENT_BUS.register(new Togglenews());
         MinecraftForge.EVENT_BUS.register(new Gifteigenbedarf());
+        MinecraftForge.EVENT_BUS.register(new Einzahlen());
 
         FrakListFiller.startTimer();
     }
